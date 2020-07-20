@@ -1,0 +1,65 @@
+program Calificaciones;
+	
+const 
+	respuestaSi = 's';
+	respuestaNo = 'n';
+
+var
+	i, j: integer;
+	n : integer;
+	cal,prom : real;
+	respuesta: char;
+	
+begin	
+	Write('Cuantas calificaciones');
+	Read(n);
+	
+	prom := 0.0;
+	i := 0;
+	while i<n do begin
+		case i of
+		   0: Write('Primera Calificacion');
+		   1: Write('Segunda Calificacion');
+		   2: Write('Tercera Calificacion'); 
+		   3: Write('Cuarta Calificacion'); 
+		  else
+	 		Write('Calificacion',i);  
+		 end;
+	
+		Read(cal);
+		prom := prom + cal;
+		i := i + 1;
+	end;
+	
+	prom := prom/n;
+	
+	if prom> 90.0 then
+		Write('Excelente! Aprobado con: ',prom);
+	else if prom > 80.0 then 
+		Write('Muy Bien! Aprobado con: ',prom);
+	else if prom > 60.0 then
+			Write('Bien! Aprobado con: ',prom);
+	else 
+		Write('Reprobado con: ',prom);
+	
+	Write('Quieres Salir del programa (s/n)');
+	Read(respuesta);
+	
+	if respuesta == respuestaSi then
+	begin
+ 		if prom> 90.0 then
+			Write('Excelente!');
+		else 
+			Write('Meh!');
+ 	end;
+	
+	i := 1;
+	while i < 3 do begin
+		for j:=1 to 3 do
+		begin
+		   Write('Adios');
+		 end;
+		i := i + 1;
+	end;
+	
+end.
